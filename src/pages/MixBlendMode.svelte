@@ -11,7 +11,7 @@
 	let txtbgcolor = "#ff0000"
 	let txtcolor = "#ffffff"
 	let sampleTxt = 'TEXTTEXTTEXT'
-	let bgImg = '../img/sample_img01.jpg'
+	let bgImg = './img/sample_img01.jpg'
 	const handleChangeSelected = (evt) => {
 		mode = evt.detail.name
 	}

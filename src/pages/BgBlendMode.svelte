@@ -6,7 +6,7 @@
 	let animate = true;
 	let mode = 'multiply'
 	let bgcolor = "#ff0000"
-	let bgImg = '../../img/sample_img01.jpg'
+	let bgImg = './img/sample_img01.jpg'
 	const handleChangeSelected = (evt) => {
 		mode = evt.detail.name
 	}
