@@ -7,7 +7,8 @@
 	let animate = true
 	let animateTxt = true
 	let mode = 'multiply'
-	let bgcolor = "#ffffff"
+	let modebgimg = 'normal'
+	let bgcolor = "#ffee00"
 	let txtbgcolor = "#ff0000"
 	let txtcolor = "#ffffff"
 	let sampleTxt = 'TEXTTEXTTEXT'
@@ -26,6 +27,9 @@
 	}
 	const handleChangeTxt = (evt) => {
 		sampleTxt = evt.detail.name
+	}
+	const handleChangeSelecteBgImage = (evt) => {
+		modebgimg = evt.detail.name
 	}
 	const handleChangeBgImage = (evt) => {
 		bgImg = evt.detail.src
@@ -50,12 +54,12 @@
 		<div class="img">
 			<div class="inner {animate ? 'fadein' : 'hide'}" style="background-color: {bgcolor};">
 				<span class="overtxt {animateTxt ? 'fadein' : 'hide'}" style="color: {txtcolor};background-color: {txtbgcolor};mix-blend-mode: {mode};">{sampleTxt}</span>
-				<img src="{bgImg}" alt="">
+				<img src="{bgImg}" alt="" style="mix-blend-mode: {modebgimg};">
 			</div>
 		</div>
 		<div class="dashbord">
 			<div class="row">
-				<h2 class="row__title">描画モード</h2>
+				<h2 class="row__title">テキスト描画モード</h2>
 				<SelectMixmode value={mode} on:value={handleChangeSelected} />
 			</div>
 			<div class="row">
@@ -67,7 +71,7 @@
 				<InputColor value={txtcolor} on:value={handleChangeInputTxt} />
 			</div>
 			<div class="row">
-				<h2>テキスト</h2>
+				<h2 class="row__title">テキスト</h2>
 				<InputTxt value={sampleTxt} on:value={handleChangeTxt} />
 			</div>
 			<div class="row">
@@ -75,7 +79,11 @@
 				<InputColor value={bgcolor} on:value={handleChangeInputBg} />
 			</div>
 			<div class="row">
-				<h2 class="row__title">背景画像</h2>
+				<h2 class="row__title">画像描画モード</h2>
+				<SelectMixmode value={modebgimg} on:value={handleChangeSelecteBgImage} />
+			</div>
+			<div class="row">
+				<h2 class="row__title">画像</h2>
 				<FileReader on:value={handleChangeBgImage} />
 			</div>
 			<div class="row">
@@ -92,12 +100,15 @@
 
 <style lang="scss">
 	.wrap {
+		position: relative;
 		display: flex;
 	}
 	.img {
 		width: 500px;
 		height: 500px;
 		margin-right: 50px;
+		position: sticky;
+		top: 0;
 	}
 	.inner {
 		display: flex;

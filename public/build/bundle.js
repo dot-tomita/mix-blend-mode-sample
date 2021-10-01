@@ -2875,7 +2875,7 @@ var app = (function () {
     	let main;
     	let h1;
     	let t1;
-    	let div11;
+    	let div12;
     	let div1;
     	let div0;
     	let span;
@@ -2886,11 +2886,11 @@ var app = (function () {
     	let img_src_value;
     	let div0_class_value;
     	let t4;
-    	let div10;
+    	let div11;
     	let div2;
     	let h20;
     	let t6;
-    	let selectmixmode;
+    	let selectmixmode0;
     	let t7;
     	let div3;
     	let h21;
@@ -2915,16 +2915,21 @@ var app = (function () {
     	let div7;
     	let h25;
     	let t21;
-    	let filereader;
+    	let selectmixmode1;
     	let t22;
     	let div8;
     	let h26;
     	let t24;
-    	let button0;
-    	let t26;
+    	let filereader;
+    	let t25;
     	let div9;
     	let h27;
-    	let t28;
+    	let t27;
+    	let button0;
+    	let t29;
+    	let div10;
+    	let h28;
+    	let t31;
     	let button1;
     	let main_intro;
     	let main_outro;
@@ -2932,42 +2937,49 @@ var app = (function () {
     	let mounted;
     	let dispose;
 
-    	selectmixmode = new SelectMixmode({
+    	selectmixmode0 = new SelectMixmode({
     			props: { value: /*mode*/ ctx[2] },
     			$$inline: true
     		});
 
-    	selectmixmode.$on("value", /*handleChangeSelected*/ ctx[8]);
+    	selectmixmode0.$on("value", /*handleChangeSelected*/ ctx[9]);
 
     	inputcolor0 = new InputColor({
-    			props: { value: /*txtbgcolor*/ ctx[4] },
+    			props: { value: /*txtbgcolor*/ ctx[5] },
     			$$inline: true
     		});
 
-    	inputcolor0.$on("value", /*handleChangeInputTxtBg*/ ctx[10]);
+    	inputcolor0.$on("value", /*handleChangeInputTxtBg*/ ctx[11]);
 
     	inputcolor1 = new InputColor({
-    			props: { value: /*txtcolor*/ ctx[5] },
+    			props: { value: /*txtcolor*/ ctx[6] },
     			$$inline: true
     		});
 
-    	inputcolor1.$on("value", /*handleChangeInputTxt*/ ctx[11]);
+    	inputcolor1.$on("value", /*handleChangeInputTxt*/ ctx[12]);
 
     	inputtxt = new InputTxt({
-    			props: { value: /*sampleTxt*/ ctx[6] },
+    			props: { value: /*sampleTxt*/ ctx[7] },
     			$$inline: true
     		});
 
-    	inputtxt.$on("value", /*handleChangeTxt*/ ctx[12]);
+    	inputtxt.$on("value", /*handleChangeTxt*/ ctx[13]);
 
     	inputcolor2 = new InputColor({
-    			props: { value: /*bgcolor*/ ctx[3] },
+    			props: { value: /*bgcolor*/ ctx[4] },
     			$$inline: true
     		});
 
-    	inputcolor2.$on("value", /*handleChangeInputBg*/ ctx[9]);
+    	inputcolor2.$on("value", /*handleChangeInputBg*/ ctx[10]);
+
+    	selectmixmode1 = new SelectMixmode({
+    			props: { value: /*modebgimg*/ ctx[3] },
+    			$$inline: true
+    		});
+
+    	selectmixmode1.$on("value", /*handleChangeSelecteBgImage*/ ctx[14]);
     	filereader = new FileReader_1({ $$inline: true });
-    	filereader.$on("value", /*handleChangeBgImage*/ ctx[13]);
+    	filereader.$on("value", /*handleChangeBgImage*/ ctx[15]);
 
     	const block = {
     		c: function create() {
@@ -2975,20 +2987,20 @@ var app = (function () {
     			h1 = element("h1");
     			h1.textContent = "mix blend mode sample";
     			t1 = space();
-    			div11 = element("div");
+    			div12 = element("div");
     			div1 = element("div");
     			div0 = element("div");
     			span = element("span");
-    			t2 = text(/*sampleTxt*/ ctx[6]);
+    			t2 = text(/*sampleTxt*/ ctx[7]);
     			t3 = space();
     			img = element("img");
     			t4 = space();
-    			div10 = element("div");
+    			div11 = element("div");
     			div2 = element("div");
     			h20 = element("h2");
-    			h20.textContent = "描画モード";
+    			h20.textContent = "テキスト描画モード";
     			t6 = space();
-    			create_component(selectmixmode.$$.fragment);
+    			create_component(selectmixmode0.$$.fragment);
     			t7 = space();
     			div3 = element("div");
     			h21 = element("h2");
@@ -3016,77 +3028,89 @@ var app = (function () {
     			t19 = space();
     			div7 = element("div");
     			h25 = element("h2");
-    			h25.textContent = "背景画像";
+    			h25.textContent = "画像描画モード";
     			t21 = space();
-    			create_component(filereader.$$.fragment);
+    			create_component(selectmixmode1.$$.fragment);
     			t22 = space();
     			div8 = element("div");
     			h26 = element("h2");
-    			h26.textContent = "全体アニメーション";
+    			h26.textContent = "画像";
     			t24 = space();
-    			button0 = element("button");
-    			button0.textContent = "フェードイン";
-    			t26 = space();
+    			create_component(filereader.$$.fragment);
+    			t25 = space();
     			div9 = element("div");
     			h27 = element("h2");
-    			h27.textContent = "文字だけアニメーション";
-    			t28 = space();
+    			h27.textContent = "全体アニメーション";
+    			t27 = space();
+    			button0 = element("button");
+    			button0.textContent = "フェードイン";
+    			t29 = space();
+    			div10 = element("div");
+    			h28 = element("h2");
+    			h28.textContent = "文字だけアニメーション";
+    			t31 = space();
     			button1 = element("button");
     			button1.textContent = "フェードイン";
     			attr_dev(h1, "class", "title");
-    			add_location(h1, file$1, 47, 1, 1240);
-    			attr_dev(span, "class", span_class_value = "overtxt " + (/*animateTxt*/ ctx[1] ? 'fadein' : 'hide') + " svelte-2daf50");
-    			set_style(span, "color", /*txtcolor*/ ctx[5]);
-    			set_style(span, "background-color", /*txtbgcolor*/ ctx[4]);
+    			add_location(h1, file$1, 51, 1, 1346);
+    			attr_dev(span, "class", span_class_value = "overtxt " + (/*animateTxt*/ ctx[1] ? 'fadein' : 'hide') + " svelte-1ld6h2h");
+    			set_style(span, "color", /*txtcolor*/ ctx[6]);
+    			set_style(span, "background-color", /*txtbgcolor*/ ctx[5]);
     			set_style(span, "mix-blend-mode", /*mode*/ ctx[2]);
-    			add_location(span, file$1, 51, 4, 1419);
-    			if (!src_url_equal(img.src, img_src_value = /*bgImg*/ ctx[7])) attr_dev(img, "src", img_src_value);
+    			add_location(span, file$1, 55, 4, 1525);
+    			if (!src_url_equal(img.src, img_src_value = /*bgImg*/ ctx[8])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-2daf50");
-    			add_location(img, file$1, 52, 4, 1578);
-    			attr_dev(div0, "class", div0_class_value = "inner " + (/*animate*/ ctx[0] ? 'fadein' : 'hide') + " svelte-2daf50");
-    			set_style(div0, "background-color", /*bgcolor*/ ctx[3]);
-    			add_location(div0, file$1, 50, 3, 1328);
-    			attr_dev(div1, "class", "img svelte-2daf50");
-    			add_location(div1, file$1, 49, 2, 1307);
-    			attr_dev(h20, "class", "row__title svelte-2daf50");
-    			add_location(h20, file$1, 57, 4, 1674);
-    			attr_dev(div2, "class", "row svelte-2daf50");
-    			add_location(div2, file$1, 56, 3, 1652);
-    			attr_dev(h21, "class", "row__title svelte-2daf50");
-    			add_location(h21, file$1, 61, 4, 1810);
-    			attr_dev(div3, "class", "row svelte-2daf50");
-    			add_location(div3, file$1, 60, 3, 1788);
-    			attr_dev(h22, "class", "row__title svelte-2daf50");
-    			add_location(h22, file$1, 65, 4, 1953);
-    			attr_dev(div4, "class", "row svelte-2daf50");
-    			add_location(div4, file$1, 64, 3, 1931);
-    			add_location(h23, file$1, 69, 4, 2090);
-    			attr_dev(div5, "class", "row svelte-2daf50");
-    			add_location(div5, file$1, 68, 3, 2068);
-    			attr_dev(h24, "class", "row__title svelte-2daf50");
-    			add_location(h24, file$1, 73, 4, 2201);
-    			attr_dev(div6, "class", "row svelte-2daf50");
-    			add_location(div6, file$1, 72, 3, 2179);
-    			attr_dev(h25, "class", "row__title svelte-2daf50");
-    			add_location(h25, file$1, 77, 4, 2334);
-    			attr_dev(div7, "class", "row svelte-2daf50");
-    			add_location(div7, file$1, 76, 3, 2312);
-    			attr_dev(h26, "class", "row__title svelte-2daf50");
-    			add_location(h26, file$1, 81, 4, 2452);
-    			add_location(button0, file$1, 82, 4, 2494);
-    			attr_dev(div8, "class", "row svelte-2daf50");
-    			add_location(div8, file$1, 80, 3, 2430);
-    			attr_dev(h27, "class", "row__title svelte-2daf50");
-    			add_location(h27, file$1, 85, 4, 2582);
-    			add_location(button1, file$1, 86, 4, 2626);
-    			attr_dev(div9, "class", "row svelte-2daf50");
-    			add_location(div9, file$1, 84, 3, 2560);
-    			attr_dev(div10, "class", "dashbord");
-    			add_location(div10, file$1, 55, 2, 1626);
-    			attr_dev(div11, "class", "wrap svelte-2daf50");
-    			add_location(div11, file$1, 48, 1, 1286);
-    			add_location(main, file$1, 46, 0, 1163);
+    			set_style(img, "mix-blend-mode", /*modebgimg*/ ctx[3]);
+    			attr_dev(img, "class", "svelte-1ld6h2h");
+    			add_location(img, file$1, 56, 4, 1684);
+    			attr_dev(div0, "class", div0_class_value = "inner " + (/*animate*/ ctx[0] ? 'fadein' : 'hide') + " svelte-1ld6h2h");
+    			set_style(div0, "background-color", /*bgcolor*/ ctx[4]);
+    			add_location(div0, file$1, 54, 3, 1434);
+    			attr_dev(div1, "class", "img svelte-1ld6h2h");
+    			add_location(div1, file$1, 53, 2, 1413);
+    			attr_dev(h20, "class", "row__title svelte-1ld6h2h");
+    			add_location(h20, file$1, 61, 4, 1817);
+    			attr_dev(div2, "class", "row svelte-1ld6h2h");
+    			add_location(div2, file$1, 60, 3, 1795);
+    			attr_dev(h21, "class", "row__title svelte-1ld6h2h");
+    			add_location(h21, file$1, 65, 4, 1957);
+    			attr_dev(div3, "class", "row svelte-1ld6h2h");
+    			add_location(div3, file$1, 64, 3, 1935);
+    			attr_dev(h22, "class", "row__title svelte-1ld6h2h");
+    			add_location(h22, file$1, 69, 4, 2100);
+    			attr_dev(div4, "class", "row svelte-1ld6h2h");
+    			add_location(div4, file$1, 68, 3, 2078);
+    			attr_dev(h23, "class", "row__title svelte-1ld6h2h");
+    			add_location(h23, file$1, 73, 4, 2237);
+    			attr_dev(div5, "class", "row svelte-1ld6h2h");
+    			add_location(div5, file$1, 72, 3, 2215);
+    			attr_dev(h24, "class", "row__title svelte-1ld6h2h");
+    			add_location(h24, file$1, 77, 4, 2367);
+    			attr_dev(div6, "class", "row svelte-1ld6h2h");
+    			add_location(div6, file$1, 76, 3, 2345);
+    			attr_dev(h25, "class", "row__title svelte-1ld6h2h");
+    			add_location(h25, file$1, 81, 4, 2500);
+    			attr_dev(div7, "class", "row svelte-1ld6h2h");
+    			add_location(div7, file$1, 80, 3, 2478);
+    			attr_dev(h26, "class", "row__title svelte-1ld6h2h");
+    			add_location(h26, file$1, 85, 4, 2649);
+    			attr_dev(div8, "class", "row svelte-1ld6h2h");
+    			add_location(div8, file$1, 84, 3, 2627);
+    			attr_dev(h27, "class", "row__title svelte-1ld6h2h");
+    			add_location(h27, file$1, 89, 4, 2765);
+    			add_location(button0, file$1, 90, 4, 2807);
+    			attr_dev(div9, "class", "row svelte-1ld6h2h");
+    			add_location(div9, file$1, 88, 3, 2743);
+    			attr_dev(h28, "class", "row__title svelte-1ld6h2h");
+    			add_location(h28, file$1, 93, 4, 2895);
+    			add_location(button1, file$1, 94, 4, 2939);
+    			attr_dev(div10, "class", "row svelte-1ld6h2h");
+    			add_location(div10, file$1, 92, 3, 2873);
+    			attr_dev(div11, "class", "dashbord");
+    			add_location(div11, file$1, 59, 2, 1769);
+    			attr_dev(div12, "class", "wrap svelte-1ld6h2h");
+    			add_location(div12, file$1, 52, 1, 1392);
+    			add_location(main, file$1, 50, 0, 1269);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3095,119 +3119,132 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
     			append_dev(main, t1);
-    			append_dev(main, div11);
-    			append_dev(div11, div1);
+    			append_dev(main, div12);
+    			append_dev(div12, div1);
     			append_dev(div1, div0);
     			append_dev(div0, span);
     			append_dev(span, t2);
     			append_dev(div0, t3);
     			append_dev(div0, img);
-    			append_dev(div11, t4);
-    			append_dev(div11, div10);
-    			append_dev(div10, div2);
+    			append_dev(div12, t4);
+    			append_dev(div12, div11);
+    			append_dev(div11, div2);
     			append_dev(div2, h20);
     			append_dev(div2, t6);
-    			mount_component(selectmixmode, div2, null);
-    			append_dev(div10, t7);
-    			append_dev(div10, div3);
+    			mount_component(selectmixmode0, div2, null);
+    			append_dev(div11, t7);
+    			append_dev(div11, div3);
     			append_dev(div3, h21);
     			append_dev(div3, t9);
     			mount_component(inputcolor0, div3, null);
-    			append_dev(div10, t10);
-    			append_dev(div10, div4);
+    			append_dev(div11, t10);
+    			append_dev(div11, div4);
     			append_dev(div4, h22);
     			append_dev(div4, t12);
     			mount_component(inputcolor1, div4, null);
-    			append_dev(div10, t13);
-    			append_dev(div10, div5);
+    			append_dev(div11, t13);
+    			append_dev(div11, div5);
     			append_dev(div5, h23);
     			append_dev(div5, t15);
     			mount_component(inputtxt, div5, null);
-    			append_dev(div10, t16);
-    			append_dev(div10, div6);
+    			append_dev(div11, t16);
+    			append_dev(div11, div6);
     			append_dev(div6, h24);
     			append_dev(div6, t18);
     			mount_component(inputcolor2, div6, null);
-    			append_dev(div10, t19);
-    			append_dev(div10, div7);
+    			append_dev(div11, t19);
+    			append_dev(div11, div7);
     			append_dev(div7, h25);
     			append_dev(div7, t21);
-    			mount_component(filereader, div7, null);
-    			append_dev(div10, t22);
-    			append_dev(div10, div8);
+    			mount_component(selectmixmode1, div7, null);
+    			append_dev(div11, t22);
+    			append_dev(div11, div8);
     			append_dev(div8, h26);
     			append_dev(div8, t24);
-    			append_dev(div8, button0);
-    			append_dev(div10, t26);
-    			append_dev(div10, div9);
+    			mount_component(filereader, div8, null);
+    			append_dev(div11, t25);
+    			append_dev(div11, div9);
     			append_dev(div9, h27);
-    			append_dev(div9, t28);
-    			append_dev(div9, button1);
+    			append_dev(div9, t27);
+    			append_dev(div9, button0);
+    			append_dev(div11, t29);
+    			append_dev(div11, div10);
+    			append_dev(div10, h28);
+    			append_dev(div10, t31);
+    			append_dev(div10, button1);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*handleClickFadeIn*/ ctx[14], false, false, false),
-    					listen_dev(button1, "click", /*handleClickFadeInTxt*/ ctx[15], false, false, false)
+    					listen_dev(button0, "click", /*handleClickFadeIn*/ ctx[16], false, false, false),
+    					listen_dev(button1, "click", /*handleClickFadeInTxt*/ ctx[17], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*sampleTxt*/ 64) set_data_dev(t2, /*sampleTxt*/ ctx[6]);
+    			if (!current || dirty & /*sampleTxt*/ 128) set_data_dev(t2, /*sampleTxt*/ ctx[7]);
 
-    			if (!current || dirty & /*animateTxt*/ 2 && span_class_value !== (span_class_value = "overtxt " + (/*animateTxt*/ ctx[1] ? 'fadein' : 'hide') + " svelte-2daf50")) {
+    			if (!current || dirty & /*animateTxt*/ 2 && span_class_value !== (span_class_value = "overtxt " + (/*animateTxt*/ ctx[1] ? 'fadein' : 'hide') + " svelte-1ld6h2h")) {
     				attr_dev(span, "class", span_class_value);
     			}
 
-    			if (!current || dirty & /*txtcolor*/ 32) {
-    				set_style(span, "color", /*txtcolor*/ ctx[5]);
+    			if (!current || dirty & /*txtcolor*/ 64) {
+    				set_style(span, "color", /*txtcolor*/ ctx[6]);
     			}
 
-    			if (!current || dirty & /*txtbgcolor*/ 16) {
-    				set_style(span, "background-color", /*txtbgcolor*/ ctx[4]);
+    			if (!current || dirty & /*txtbgcolor*/ 32) {
+    				set_style(span, "background-color", /*txtbgcolor*/ ctx[5]);
     			}
 
     			if (!current || dirty & /*mode*/ 4) {
     				set_style(span, "mix-blend-mode", /*mode*/ ctx[2]);
     			}
 
-    			if (!current || dirty & /*bgImg*/ 128 && !src_url_equal(img.src, img_src_value = /*bgImg*/ ctx[7])) {
+    			if (!current || dirty & /*bgImg*/ 256 && !src_url_equal(img.src, img_src_value = /*bgImg*/ ctx[8])) {
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			if (!current || dirty & /*animate*/ 1 && div0_class_value !== (div0_class_value = "inner " + (/*animate*/ ctx[0] ? 'fadein' : 'hide') + " svelte-2daf50")) {
+    			if (!current || dirty & /*modebgimg*/ 8) {
+    				set_style(img, "mix-blend-mode", /*modebgimg*/ ctx[3]);
+    			}
+
+    			if (!current || dirty & /*animate*/ 1 && div0_class_value !== (div0_class_value = "inner " + (/*animate*/ ctx[0] ? 'fadein' : 'hide') + " svelte-1ld6h2h")) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
-    			if (!current || dirty & /*bgcolor*/ 8) {
-    				set_style(div0, "background-color", /*bgcolor*/ ctx[3]);
+    			if (!current || dirty & /*bgcolor*/ 16) {
+    				set_style(div0, "background-color", /*bgcolor*/ ctx[4]);
     			}
 
-    			const selectmixmode_changes = {};
-    			if (dirty & /*mode*/ 4) selectmixmode_changes.value = /*mode*/ ctx[2];
-    			selectmixmode.$set(selectmixmode_changes);
+    			const selectmixmode0_changes = {};
+    			if (dirty & /*mode*/ 4) selectmixmode0_changes.value = /*mode*/ ctx[2];
+    			selectmixmode0.$set(selectmixmode0_changes);
     			const inputcolor0_changes = {};
-    			if (dirty & /*txtbgcolor*/ 16) inputcolor0_changes.value = /*txtbgcolor*/ ctx[4];
+    			if (dirty & /*txtbgcolor*/ 32) inputcolor0_changes.value = /*txtbgcolor*/ ctx[5];
     			inputcolor0.$set(inputcolor0_changes);
     			const inputcolor1_changes = {};
-    			if (dirty & /*txtcolor*/ 32) inputcolor1_changes.value = /*txtcolor*/ ctx[5];
+    			if (dirty & /*txtcolor*/ 64) inputcolor1_changes.value = /*txtcolor*/ ctx[6];
     			inputcolor1.$set(inputcolor1_changes);
     			const inputtxt_changes = {};
-    			if (dirty & /*sampleTxt*/ 64) inputtxt_changes.value = /*sampleTxt*/ ctx[6];
+    			if (dirty & /*sampleTxt*/ 128) inputtxt_changes.value = /*sampleTxt*/ ctx[7];
     			inputtxt.$set(inputtxt_changes);
     			const inputcolor2_changes = {};
-    			if (dirty & /*bgcolor*/ 8) inputcolor2_changes.value = /*bgcolor*/ ctx[3];
+    			if (dirty & /*bgcolor*/ 16) inputcolor2_changes.value = /*bgcolor*/ ctx[4];
     			inputcolor2.$set(inputcolor2_changes);
+    			const selectmixmode1_changes = {};
+    			if (dirty & /*modebgimg*/ 8) selectmixmode1_changes.value = /*modebgimg*/ ctx[3];
+    			selectmixmode1.$set(selectmixmode1_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(selectmixmode.$$.fragment, local);
+    			transition_in(selectmixmode0.$$.fragment, local);
     			transition_in(inputcolor0.$$.fragment, local);
     			transition_in(inputcolor1.$$.fragment, local);
     			transition_in(inputtxt.$$.fragment, local);
     			transition_in(inputcolor2.$$.fragment, local);
+    			transition_in(selectmixmode1.$$.fragment, local);
     			transition_in(filereader.$$.fragment, local);
 
     			add_render_callback(() => {
@@ -3219,11 +3256,12 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(selectmixmode.$$.fragment, local);
+    			transition_out(selectmixmode0.$$.fragment, local);
     			transition_out(inputcolor0.$$.fragment, local);
     			transition_out(inputcolor1.$$.fragment, local);
     			transition_out(inputtxt.$$.fragment, local);
     			transition_out(inputcolor2.$$.fragment, local);
+    			transition_out(selectmixmode1.$$.fragment, local);
     			transition_out(filereader.$$.fragment, local);
     			if (main_intro) main_intro.invalidate();
     			main_outro = create_out_transition(main, fade, { duration: 500 });
@@ -3231,11 +3269,12 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-    			destroy_component(selectmixmode);
+    			destroy_component(selectmixmode0);
     			destroy_component(inputcolor0);
     			destroy_component(inputcolor1);
     			destroy_component(inputtxt);
     			destroy_component(inputcolor2);
+    			destroy_component(selectmixmode1);
     			destroy_component(filereader);
     			if (detaching && main_outro) main_outro.end();
     			mounted = false;
@@ -3260,7 +3299,8 @@ var app = (function () {
     	let animate = true;
     	let animateTxt = true;
     	let mode = 'multiply';
-    	let bgcolor = "#ffffff";
+    	let modebgimg = 'normal';
+    	let bgcolor = "#ffee00";
     	let txtbgcolor = "#ff0000";
     	let txtcolor = "#ffffff";
     	let sampleTxt = 'TEXTTEXTTEXT';
@@ -3271,23 +3311,27 @@ var app = (function () {
     	};
 
     	const handleChangeInputBg = evt => {
-    		$$invalidate(3, bgcolor = evt.detail.name);
+    		$$invalidate(4, bgcolor = evt.detail.name);
     	};
 
     	const handleChangeInputTxtBg = evt => {
-    		$$invalidate(4, txtbgcolor = evt.detail.name);
+    		$$invalidate(5, txtbgcolor = evt.detail.name);
     	};
 
     	const handleChangeInputTxt = evt => {
-    		$$invalidate(5, txtcolor = evt.detail.name);
+    		$$invalidate(6, txtcolor = evt.detail.name);
     	};
 
     	const handleChangeTxt = evt => {
-    		$$invalidate(6, sampleTxt = evt.detail.name);
+    		$$invalidate(7, sampleTxt = evt.detail.name);
+    	};
+
+    	const handleChangeSelecteBgImage = evt => {
+    		$$invalidate(3, modebgimg = evt.detail.name);
     	};
 
     	const handleChangeBgImage = evt => {
-    		$$invalidate(7, bgImg = evt.detail.src);
+    		$$invalidate(8, bgImg = evt.detail.src);
     	};
 
     	const handleClickFadeIn = () => {
@@ -3328,6 +3372,7 @@ var app = (function () {
     		animate,
     		animateTxt,
     		mode,
+    		modebgimg,
     		bgcolor,
     		txtbgcolor,
     		txtcolor,
@@ -3338,6 +3383,7 @@ var app = (function () {
     		handleChangeInputTxtBg,
     		handleChangeInputTxt,
     		handleChangeTxt,
+    		handleChangeSelecteBgImage,
     		handleChangeBgImage,
     		handleClickFadeIn,
     		handleClickFadeInTxt
@@ -3347,11 +3393,12 @@ var app = (function () {
     		if ('animate' in $$props) $$invalidate(0, animate = $$props.animate);
     		if ('animateTxt' in $$props) $$invalidate(1, animateTxt = $$props.animateTxt);
     		if ('mode' in $$props) $$invalidate(2, mode = $$props.mode);
-    		if ('bgcolor' in $$props) $$invalidate(3, bgcolor = $$props.bgcolor);
-    		if ('txtbgcolor' in $$props) $$invalidate(4, txtbgcolor = $$props.txtbgcolor);
-    		if ('txtcolor' in $$props) $$invalidate(5, txtcolor = $$props.txtcolor);
-    		if ('sampleTxt' in $$props) $$invalidate(6, sampleTxt = $$props.sampleTxt);
-    		if ('bgImg' in $$props) $$invalidate(7, bgImg = $$props.bgImg);
+    		if ('modebgimg' in $$props) $$invalidate(3, modebgimg = $$props.modebgimg);
+    		if ('bgcolor' in $$props) $$invalidate(4, bgcolor = $$props.bgcolor);
+    		if ('txtbgcolor' in $$props) $$invalidate(5, txtbgcolor = $$props.txtbgcolor);
+    		if ('txtcolor' in $$props) $$invalidate(6, txtcolor = $$props.txtcolor);
+    		if ('sampleTxt' in $$props) $$invalidate(7, sampleTxt = $$props.sampleTxt);
+    		if ('bgImg' in $$props) $$invalidate(8, bgImg = $$props.bgImg);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -3362,6 +3409,7 @@ var app = (function () {
     		animate,
     		animateTxt,
     		mode,
+    		modebgimg,
     		bgcolor,
     		txtbgcolor,
     		txtcolor,
@@ -3372,6 +3420,7 @@ var app = (function () {
     		handleChangeInputTxtBg,
     		handleChangeInputTxt,
     		handleChangeTxt,
+    		handleChangeSelecteBgImage,
     		handleChangeBgImage,
     		handleClickFadeIn,
     		handleClickFadeInTxt
