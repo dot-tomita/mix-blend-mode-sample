@@ -34,13 +34,13 @@
 		animate = false;
 		setTimeout( () => {
 			animate = true
-		},700)
+		},800)
 	}
 	const handleClickFadeInTxt = () => {
 		animateTxt = false;
 		setTimeout( () => {
 			animateTxt = true
-		},700)
+		},800)
 	}
 </script>
 
@@ -106,7 +106,7 @@
 		width: 500px;
 		height: 500px;
 		overflow: hidden;
-		transition: opacity 0.8s ease-out;
+		transition: all 0.8s ease-out;
 		.overtxt {
 			display: block;
 			position: absolute;
@@ -119,7 +119,7 @@
 			padding: 10px;
 			text-align: center;
 			word-break: break-all;
-			transition: opacity 0.8s ease-out;
+			transition: all 0.8s ease-out;
 		}
 		img {
 			object-fit: cover;

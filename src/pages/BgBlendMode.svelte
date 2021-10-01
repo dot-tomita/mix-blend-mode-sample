@@ -20,7 +20,7 @@
 		animate = false;
 		setTimeout( () => {
 			animate = true
-		},700)
+		},800)
 	}
 </script>
 
@@ -66,7 +66,7 @@
 		background-repeat: no-repeat;
 		background-position: 50% 0;
 		background-size: cover;
-		transition: opacity 0.8s ease-out;
+		transition: all 0.8s ease-out;
 	}
 	.row {
 		&:not(:first-child) {
