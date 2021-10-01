@@ -7,17 +7,14 @@
 	let animate = true
 	let animateTxt = true
 	let mode = 'multiply'
-	let modebgimg = 'normal'
-	let bgcolor = "#ffee00"
+	let modebgimg = 'multiply'
 	let txtbgcolor = "#ff0000"
 	let txtcolor = "#ffffff"
 	let sampleTxt = 'TEXTTEXTTEXT'
 	let bgImg = './img/sample_img01.jpg'
+	let pat = true
 	const handleChangeSelected = (evt) => {
 		mode = evt.detail.name
-	}
-	const handleChangeInputBg = (evt) => {
-		bgcolor = evt.detail.name
 	}
 	const handleChangeInputTxtBg = (evt) => {
 		txtbgcolor = evt.detail.name
@@ -49,10 +46,10 @@
 </script>
 
 <main in:fade="{{delay: 500, duration: 500}}" out:fade="{{duration: 500}}">
-	<h1 class="title">mix blend mode sample</h1>
+	<h1 class="title">mix blend mode issue01</h1>
 	<div class="wrap">
-		<div class="img">
-			<div class="inner {animate ? 'fadein' : 'hide'}" style="background-color: {bgcolor}; ">
+		<div class="img {pat ? 'is_pat': null}">
+			<div class="inner {animate ? 'fadein' : 'hide'}">
 				<span class="overtxt {animateTxt ? 'fadein' : 'hide'}" style="color: {txtcolor};background-color: {txtbgcolor};mix-blend-mode: {mode};">{sampleTxt}</span>
 				<img src="{bgImg}" alt="" style="mix-blend-mode: {modebgimg};">
 			</div>
@@ -75,16 +72,18 @@
 				<InputTxt value={sampleTxt} on:value={handleChangeTxt} />
 			</div>
 			<div class="row">
-				<h2 class="row__title">背景色</h2>
-				<InputColor value={bgcolor} on:value={handleChangeInputBg} />
-			</div>
-			<div class="row">
 				<h2 class="row__title">画像描画モード</h2>
 				<SelectMixmode value={modebgimg} on:value={handleChangeSelecteBgImage} />
 			</div>
 			<div class="row">
 				<h2 class="row__title">画像</h2>
 				<FileReader on:value={handleChangeBgImage} />
+			</div>
+			<div class="row">
+				<h2 class="row__title">背景パターン</h2>
+				<label for="pattern">
+					<input name="pattern" type="checkbox" bind:checked={pat}> パターンを追加する
+				</label>
 			</div>
 			<div class="row">
 				<h2 class="row__title">全体アニメーション</h2>
@@ -109,6 +108,17 @@
 		margin-right: 50px;
 		position: sticky;
 		top: 0;
+		&.is_pat {
+			background:
+			radial-gradient(black 3px, transparent 4px),
+			radial-gradient(black 3px, transparent 4px),
+			linear-gradient(#fff 4px, transparent 0),
+			linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+			linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+			#fff;
+			background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+			background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+		}
 	}
 	.inner {
 		display: flex;
