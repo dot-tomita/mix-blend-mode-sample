@@ -1,0 +1,43 @@
+{
+  "name": "mix-blend-mode-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dot-tomita/mix-blend-mode-sample.git"
+  },
+  "author": "Yuki Tomita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dot-tomita/mix-blend-mode-sample/issues"
+  },
+  "homepage": "https://github.com/dot-tomita/mix-blend-mode-sample#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tsconfig/svelte": "^2.0.0",
+    "rollup": "^2.57.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.42.1",
+    "svelte": "^3.43.1",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.9.7",
+    "svelte-spa-router": "^3.2.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.14"
+  }
+}
