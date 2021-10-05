@@ -2,11 +2,13 @@
   import Router, {link, location} from 'svelte-spa-router'
   import BgBlendMode from './pages/BgBlendMode.svelte'
   import MixBlendMode from './pages/MixBlendMode.svelte'
+  import CursorSample from './pages/CursorSample.svelte'
   import Issue01 from './pages/Issue01.svelte'
   
   const routes = {
     '/': MixBlendMode,
     '/bg/': BgBlendMode,
+    '/cursor/': CursorSample,
     '/issue01/': Issue01,
   };
 </script>
@@ -18,6 +20,8 @@
     <a use:link={{href:'/', disabled:false}} data-current={ $location === '/' ? 'true': 'false'}>mix-blend-mode sample</a>
     <!-- svelte-ignore a11y-missing-attribute -->
     <a use:link={{href:'/bg/', disabled:false}} data-current={ $location === '/bg/' ? 'true': 'false'}>background-blend-mode sample</a>
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a use:link={{href:'/cursor/', disabled:false}} data-current={ $location === '/cursor/' ? 'true': 'false'}>mouse cursor sample</a>
     <!-- svelte-ignore a11y-missing-attribute -->
     <a use:link={{href:'/issue01/', disabled:false}} data-current={ $location === '/issue01/' ? 'true': 'false'}>issue01</a>
   </div>
