@@ -82,7 +82,7 @@
 			<div class="row">
 				<h2 class="row__title">背景パターン</h2>
 				<label for="pattern">
-					<input name="pattern" type="checkbox" bind:checked={pat}> パターンを追加する
+					<input id="pattern" name="pattern" type="checkbox" bind:checked={pat}> パターンを追加する
 				</label>
 			</div>
 			<div class="row">
