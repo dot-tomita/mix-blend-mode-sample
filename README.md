@@ -1,5 +1,7 @@
 # mix-blendmode-sample
 
+https://dot-tomita.github.io/mix-blend-mode-sample/
+
 ## command
 
 ```zsh
