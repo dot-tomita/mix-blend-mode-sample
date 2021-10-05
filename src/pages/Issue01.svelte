@@ -1,5 +1,5 @@
 <script>
-	import { fade, scale } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import SelectMixmode from '../component/SelectMixmode.svelte'
 	import InputColor from '../component/InputColor.svelte'
 	import FileReader from '../component/FileReader.svelte'

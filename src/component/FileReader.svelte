@@ -1,6 +1,5 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-  let value;
 	const dispatch = createEventDispatcher();
   const fileReader = new FileReader();
   const onChangeInput = (evt) => {
